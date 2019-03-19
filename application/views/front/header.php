@@ -27,7 +27,18 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item <?php if($this->uri->segment(1)=="")echo 'active';?> "><a class="nav-link" href="<?=base_url();?>">Home</a></li>
                 <li class="nav-item <?php if($this->uri->segment(1)=="palembangkost")echo 'active';?>"><a class="nav-link" href="<?=base_url('promokost');?>">Promosikan Kost</a></li>
+                <?php if($status == "login") : ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="lnr lnr-user"></span> <?=$username;?></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="<?=base_url('user');?>">Profil</a>
+                        <a class="dropdown-item" href="<?=base_url('user');?>">Edit Profil</a>
+                        <a class="dropdown-item" href="<?=base_url('login/logout');?>">Logout</a>
+                    </div>
+                </li>
+                <?php else : ?>
                 <li class="nav-item <?php if($this->uri->segment(1)=="login")echo 'active';?>"><a class="nav-link" href="<?=base_url('login');?>"><span class="lnr lnr-lock"></span> Login</a></li>
+                <?php endif; ?>
             </ul>
         </div>
-    </nav> 
+    </nav>

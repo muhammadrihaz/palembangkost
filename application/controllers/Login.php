@@ -8,7 +8,10 @@ class Login extends CI_Controller{
     }
 
     function index(){
-        $this->load->view('front/header');
+        $data['status'] = $this->session->userdata('status');
+        $data['username'] = $this->session->userdata('nama');
+
+        $this->load->view('front/header', $data);
         $this->load->view('front/login');
         $this->load->view('front/footer');
     }
@@ -30,10 +33,15 @@ class Login extends CI_Controller{
     
             $this->session->set_userdata($data_session);
 
-            redirect(base_url("user/dashboard"));
+            redirect(base_url("user"));
         }else{
             echo "Username dan password salah !";
         }
+    }
+
+    function logout(){
+        $this->session->sess_destroy();
+        redirect(base_url('login'));
     }
 
 

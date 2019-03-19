@@ -5,8 +5,11 @@ class Home extends CI_Controller
 {
 
     public function index()
-    {
-        $this->load->view('front/header');
+    {   
+        $data['status'] = $this->session->userdata('status');
+        $data['username'] = $this->session->userdata('nama');
+
+        $this->load->view('front/header', $data);
         $this->load->view('front/index');
         $this->load->view('front/footer');
     }

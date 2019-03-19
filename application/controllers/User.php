@@ -11,6 +11,11 @@ class User extends CI_Controller{
     }
 
     function index(){
+        $data['status'] = $this->session->userdata('status');
+        $data['username'] = $this->session->userdata('nama');
+
+        $this->load->view('front/header', $data);
         $this->load->view('front/user/dashboard');
+        $this->load->view('front/footer');
     }
 }
