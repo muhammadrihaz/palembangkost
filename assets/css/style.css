@@ -235,6 +235,11 @@ body {
 .login-container {
     height: calc(100vh - 160px);
 }
+@media(max-width:600px){
+    .login-container{
+        height: 400px;
+    }
+}
 
 .loginform-container {
     width: 90%;
@@ -258,4 +263,9 @@ body {
 
 .loginform-body input {
     margin-bottom: 10px;
+}
+
+.loginform-register {
+    text-align: center;
+    margin-top: 10px;
 }

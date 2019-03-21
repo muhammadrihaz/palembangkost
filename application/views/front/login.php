@@ -8,6 +8,9 @@
                 <input type="text" name="username" class="form-control" placeholder="Username">
                 <input type="password" name="password" class="form-control" placeholder="Password">
                 <button type="submit" class="btn btn-success btn-lg form-control">Login</button>
+                <div class="loginform-register">
+                Belum mempunyai akun? <a href="">Daftar</a>
+                </div>
             </form>
         </div>
     </div>
